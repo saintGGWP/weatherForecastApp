@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>Exception</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <p th:if="${msg != null}"><span th:text="${msg}"/></p>
+        <p th:if="${msg == null}">Oooops! Something went wrong. Please take another try or try later</p>
+        <a href="/">Take another try</a>
+    </body>
+</html>

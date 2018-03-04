@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Your forecast</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Your forecast</h1>
+        <p th:text="'City: ' + ${forecast.city}" />
+        <p th:text="'Date: ' + ${forecast.date}" />
+        <p th:text="'Degrees: ' + ${forecast.degrees}" />
+        <p th:text="'humidity: ' + ${forecast.humidity}" />
+        <a href="/">Get another forecast</a>
+    </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+    <head>
+        <title>Forecast welcome page</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    </head>
+    <body>
+        <h1>Hey. Please nsert city and date for your forecast</h1>
+        <form id="forecastFrom" action="#" th:action="@{/forecast}" th:object="${forecast_search_info}" method="post">
+            <p>City: <input id="city" type="text" th:field="*{city}" /></p>
+            <p>Date: <input id="date" type="date" th:field="*{date}" /></p>
+            <p><button type="submit" onclick="return isValidData()">Get forecast</button> <input type="reset" value="Clear" /></p>
+        </form>
+    </body>
+    <script type="text/javascript">
+
+        /**
+         * Проверяем валидность введенных данных
+         * @returns {boolean} true, если данные валидные, false - в противном случае
+         */
+        function isValidData() {
+            var city = document.getElementById("city").value;
+            if (!city) {
+                alert("Fill required field 'City'");
+                return false;
+            }
+            var date = document.getElementById("date").value;
+            if (!date) {
+                alert("Fill required field 'Date'");
+                return false;
+            }
+            return true;
+        }
+    </script>
+</html>
