@@ -1,0 +1,23 @@
+entity Book {
+	id Long required
+	name String
+    pages Integer
+}
+
+entity Author {
+	id Long required
+	name String
+    age Integer
+}
+
+relationship OneToMany {
+	Author{id} to
+	/**
+	* Another side of the same relationship
+	*/
+	Book
+}
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
