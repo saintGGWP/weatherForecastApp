@@ -1,0 +1,24 @@
+application {
+    config {
+        prodDatabaseType postgresql
+        buildTool maven
+    }
+    entities *
+}
+
+entity Book {
+	id Long required
+	name String
+    pages Integer
+}
+
+entity Author {
+	id Long required
+	name String
+    age Integer
+}
+
+relationship OneToMany {
+	Author to Book
+}
+
